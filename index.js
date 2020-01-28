@@ -297,16 +297,18 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(limit) {
+function counterMakerWithLimit(maxValue) {
   let count = 0;
   return function counter(){
-    if(count > limit){
-      let count = 0;
-    } else { 
-    return count++;
-    console.log(count);
+    if (count < maxValue){
+      return count++;
+    } else {
+      count = 0;
+      return maxValue;
     }
+    
   }
+
 }
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
