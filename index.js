@@ -92,7 +92,7 @@ function processSum(numberList, callback) {
   // invoking callback(num) results in the sum of all the elements in numberList 
   const numArg = numberList.reduce(function(accumulator, item){
     return accumulator + item;
-  })
+  }, 0)
   return callback(numArg);
 }
 
@@ -302,7 +302,8 @@ function counterMakerWithLimit(limit) {
     if(count > limit){
       let count = 0;
     } else { 
-    return ++count;
+    return count++;
+    console.log(count);
     }
   }
 }
