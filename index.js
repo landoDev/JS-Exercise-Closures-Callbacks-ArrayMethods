@@ -67,7 +67,7 @@ function processLength(list, callback) {
  * should return 'barbar'.
 */
 function processLastItem(stringList, callback) {
-  return callback(stringList[stringList.length - 1])
+  return callback(stringList[stringList.length - 1]);
 }
 
 /**
@@ -87,8 +87,15 @@ function processLastItem(stringList, callback) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
-  /* CODE HERE */
+function processSum(numberList, callback) {
+  // arr.reduce(callback( accumulator, currentValue[, index[, array]] )[, initialValue])
+  // invoking callback(num) results in the sum of all the elements in numberList 
+  const numArg = numberList.reduce(function(accumulator, item){
+    console.log(`${accumulator}`)
+    return accumulator + item;
+  })
+  console.log(numArg);
+  return callback(numArg);
 }
 
 /**
@@ -133,8 +140,9 @@ function processProduct(/* CODE HERE */) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
-  /* CODE HERE */
+function processContains(item, list, callback) {
+  const checkContain = list.includes(item)
+  return callback(checkContain);
 }
 
 /**
